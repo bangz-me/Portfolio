@@ -1,26 +1,50 @@
+html {
+  scroll-behavior: smooth;
+}
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --width-max-container: 75rem;
+  --color-bg-100: hsl(240, 3%, 12%);
+  --color-bg-200: hsl(30 3.3% 11.8%);
+  --color-bg-300: hsl(30 2.6% 7.6%);
+  --color-fg-100: hsl(50 9% 73.7%);
+  --color-fg-200: hsl(48 33.3% 97.1%);
+  --color-fg-300: hsl(48 4.8% 59.2);
+
+  --breakpoint-xs: 420px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@layer base {
+  h1,
+  h2,
+  h3 {
+    @apply capitalize text-fg-200 tracking-tight;
+    font-family: var(--font-manrope), serif;
+  }
+  p {
+    @apply leading-normal;
+  }
+
+  a {
+    @apply text-fg-200 flex gap-2;
+  }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+h2 {
+  @apply font-bold tracking-tight text-lg;
+}
+
+@layer components {
+  .wrapper {
+    width: min(88%, var(--width-max-container));
+    margin-inline: auto;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply text-fg-100 bg-bg-100 font-medium leading-tight tracking-tight;
+  overscroll-behavior: none;
+  font-family: var(--font-inter), sans-serif;
 }
