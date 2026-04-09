@@ -1,65 +1,170 @@
 import Image from "next/image";
+import {
+  aboutData,
+  articlesData,
+  certificationsData,
+  experienceData,
+  profileData,
+  socials,
+} from "./constants/home";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <>
+      <header className="sticky top-0 pt-16 z-20 pb-4 bg-bg-100/80 backdrop-blur-md">
+        <div className="wrapper flex flex-col sm:flex-row gap-4 sm:items-center">
+          <div className="size-20 relative">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src={profileData.img}
+              alt="Kevin Kemchor"
+              priority
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 400px"
+              className="object-cover rounded-full"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+          <div>
+            <h1 className="text-3xl">{profileData.name}</h1>
+            <p className="text-lg mb-1">{profileData.role}</p>
+            <div>
+              <ul className="flex text-sm sm:text-base">
+                {profileData.links.map((link, index) => {
+                  return (
+                    <li key={index} className="border-r px-2 first:pl-0">
+                      <a
+                        className="text-fg-300 hover:underline"
+                        href={link.url}
+                      >
+                        {link.name}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
         </div>
+      </header>
+
+      <main className="space-y-15 [&>section]:scroll-mt-48 my-8">
+        <section id="about">
+          <div className="wrapper">
+            <h2 className="text-2xl mb-4">About</h2>
+            <p className="whitespace-pre-line">{aboutData.description}</p>
+          </div>
+        </section>
+
+        <section id="experience">
+          <div className="wrapper">
+            <h2 className="text-2xl mb-4">Experience</h2>
+            <div className="space-y-5">
+              <div className="flex flex-col sm:flex-row sm:justify-between gap-4">
+                <div>
+                  <h3 className="mb-2 text-xl">{experienceData.role}</h3>
+                  <p className="text-fg-200/70">{experienceData.company}</p>
+                </div>
+                <div>
+                  <p>{experienceData.duration}</p>
+                </div>
+              </div>
+              <ul className="list-disc space-y-3 px-3">
+                {experienceData.activities.map((activity, index) => {
+                  return <li key={index}>{activity}</li>;
+                })}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="articles">
+          <div className="wrapper space-y-6">
+            <h2 className="text-2xl mb-4">Articles</h2>
+            <div className="space-y-6">
+              {articlesData.articles.map((article) => {
+                return (
+                  <div key={article.id} className="space-y-3">
+                    <div className="relative w-50 h-25 border-0 rounded-lg">
+                      <Image
+                        src={article.image}
+                        alt={article.title}
+                        priority
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 400px"
+                        className="object-cover rounded-lg"
+                      />
+                    </div>
+                    <div>
+                      <a
+                        className=" hover:underline"
+                        href={article.url}
+                        target="_blank"
+                      >
+                        <h3 className="truncate w-[60ch] text-xl">
+                          {article.title}
+                        </h3>
+                      </a>
+                      <p className="text-sm">{article.date}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <a
+              href={articlesData.articleProfile}
+              className="flex gap-2 hover:gap-5 w-fit italic"
+            >
+              <span>More articles</span>
+              <span> →</span>
+            </a>
+          </div>
+        </section>
+
+        <section id="certifications">
+          <div className="wrapper">
+            <h2 className="text-2xl mb-4">Certifications</h2>
+            <div className="flex gap-6 flex-wrap">
+              {certificationsData.map((cert) => {
+                return (
+                  <div key={cert.id} className="space-y-1 w-60">
+                    <div className="relative w-full aspect-video rounded-lg overflow-hidden">
+                      <Image
+                        src={cert.image}
+                        alt={cert.title}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 400px"
+                        className="object-cover"
+                      />
+                    </div>
+
+                    <h3 className="line-clamp-2 text-lg">{cert.title}</h3>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
       </main>
-    </div>
+
+      <footer>
+        <div className="wrapper flex flex-col items-center gap-2 py-8">
+          <p>© {`${new Date().getFullYear()} - Kevin Kemchor`}</p>
+
+          <div className="flex gap-2">
+            {socials.map((social) => {
+              return (
+                <a
+                  key={social.id}
+                  href={social.url}
+                  target="_blank"
+                  className="hover:text-fg-300"
+                >
+                  <social.icon size={20} />
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </footer>
+    </>
   );
 }

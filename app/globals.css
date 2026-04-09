@@ -5,7 +5,7 @@ html {
 @import "tailwindcss";
 
 @theme {
-  --width-max-container: 75rem;
+  --width-max-container: 50rem;
   --color-bg-100: hsl(240, 3%, 12%);
   --color-bg-200: hsl(30 3.3% 11.8%);
   --color-bg-300: hsl(30 2.6% 7.6%);
@@ -19,7 +19,8 @@ html {
 @layer base {
   h1,
   h2,
-  h3 {
+  h3,
+  h4 {
     @apply capitalize text-fg-200 tracking-tight;
     font-family: var(--font-manrope), serif;
   }
@@ -32,9 +33,9 @@ html {
   }
 }
 
-h2 {
+/* h2 {
   @apply font-bold tracking-tight text-lg;
-}
+} */
 
 @layer components {
   .wrapper {
