@@ -9,7 +9,7 @@ import containerSecImg from "@/app/assets/images/CONTAINER-SECURITY.webp";
 import lambdaImg from "@/app/assets/images/LAMBDA.webp";
 
 export const profileData = {
-  name: "Kevin Kemchor",
+  name: "Kevin Nkemchor",
   role: "Application Support Engineer.",
   img: profileImg,
   links: [
@@ -45,15 +45,15 @@ export const experienceData = {
   duration: "Jan 2024 - Present",
   company: "UBA Group",
   activities: [
-    `Oversee and implement proper stakeholder's management activities for effective execution, and timely delivery as the product owner for all collections and remittance applications`,
-    `Liaise with vendors on escalated issues by providing issue synopsis, review of application logs to aid root cause identification and resolution`,
-    `Design and implement information systems that optimize organizational efficiency together with developing new processes to ensure business improvements`,
-
-    `Participate in initiatives to implement new business requirements, platform upgrades and new releases on the collections platforms, patch and system upgrade, ensuring high availability of applications within scope`,
-
-    `Actively resolve all service desk incidents raised on GRP as second level support and following standard procedures to escalate unresolved issues to the appropriate internal teams for prompt resolution`,
-
-    `Ensure 100% failover and switch-over success for all services to the DR whenever requested`,
+    `Implemented end-to-end monitoring and observability (logs, metrics, traces), increasing incident detection speed by 40% and improving system visibility across 100% of critical services`,
+    `Maintained 99.9%+ uptime for mission-critical VAS and remittance platforms handling millions of transactions daily across retail and corporate customers`,
+    `Monitored system performance (latency, throughput, error rates), reducing P95 response time by 25% through proactive performance tuning`,
+    `Leveraged observability tools to perform root cause analysis, reducing recurring incidents by 30% and improving system reliability`,
+    `Onboarded 500+ billers via secure, high-availability API integrations, improving SLO compliance and reducing onboarding time by 40%`,
+    `Reduced Recovery Time Objective (RTO) by 20% by enhancing failover readiness and conducting dependency risk assessments aligned with ISO 22301`,
+    `Led root cause analysis for high-severity production incidents, restoring services within SLA and consistently improving incident resolution efficiency`,
+    `Automated certificate renewal processes, eliminating downtime risks and ensuring secure, uninterrupted service communication`,
+    `Supported distributed microservices integration across remittance platforms, ensuring reliability and secure inter-service communication`,
   ],
 };
 

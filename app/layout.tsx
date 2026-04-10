@@ -17,7 +17,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Kevin Kemchor(Bangz)",
+  title: "Kevin Nkemchor(Bangz)",
   description: "Portfolio",
 };
 
