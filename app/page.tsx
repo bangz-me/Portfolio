@@ -9,8 +9,7 @@ import {
 } from "./constants/home";
 
 export default function Home() {
-
-  const date = new Date().getFullYear()
+  const date = new Date().getFullYear();
 
   return (
     <>
@@ -49,7 +48,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="space-y-15 [&>section]:scroll-mt-48 my-8">
+      <main className="space-y-15 [&>section]:scroll-mt-70  sm:[&>section]:scroll-mt-48 my-8">
         <section id="about">
           <div className="wrapper">
             <h2 className="text-2xl mb-4">About</h2>
