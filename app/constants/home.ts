@@ -33,7 +33,7 @@ export const profileData = {
 };
 
 export const aboutData = {
-  description: `Application Support Engineer with hands-on experience ensuring high availability, low latency, and optimal performance of critical enterprise services. I manage end-to-end service reliability through efficient monitoring, change management, capacity planning, and rapid incident response. 
+  description: `Application Support Engineer experienced in ensuring high availability, low latency, and optimal performance of critical enterprise services. I manage end-to-end service reliability through efficient monitoring, change management, capacity planning, and rapid incident response. 
 
 Skilled in deep-dive investigations to uncover root causes, drive corrective actions, and improve long-term system resilience and support processes.
 
