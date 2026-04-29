@@ -9,6 +9,9 @@ import {
 } from "./constants/home";
 
 export default function Home() {
+
+  const date = new Date().getFullYear()
+
   return (
     <>
       <header className="sticky top-0 pt-16 z-20 pb-4 bg-bg-100/80 backdrop-blur-md">
@@ -16,7 +19,7 @@ export default function Home() {
           <div className="size-20 relative">
             <Image
               src={profileData.img}
-              alt="Kevin Kemchor"
+              alt="Kevin Nkemchor"
               priority
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 400px"
@@ -147,7 +150,7 @@ export default function Home() {
 
       <footer>
         <div className="wrapper flex flex-col items-center gap-2 py-8">
-          <p>© {`${new Date().getFullYear()} - Kevin Kemchor`}</p>
+          <p>© {`${date} - Kevin Nkemchor`}</p>
 
           <div className="flex gap-2">
             {socials.map((social) => {
