@@ -29,7 +29,7 @@ html {
   }
 
   a {
-    @apply text-fg-200 flex gap-2;
+    @apply text-fg-200 flex gap-1;
   }
 }
 

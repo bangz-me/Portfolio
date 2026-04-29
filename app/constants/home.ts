@@ -3,6 +3,7 @@ import { FaGithub, FaEnvelope, FaTwitter, FaLinkedin } from "react-icons/fa";
 import profileImg from "@/app/assets/images/bngz.jpeg";
 import modernTechImg from "@/app/assets/images/modern-engineering.webp";
 import impervaImg from "@/app/assets/images/imperva.webp";
+import mysqlInfraImg from "@/app/assets/images/mysql-infra.webp";
 
 import devopsAwsImg from "@/app/assets/images/DEVOPS-ON-AWS.webp";
 import containerSecImg from "@/app/assets/images/CONTAINER-SECURITY.webp";
@@ -20,6 +21,10 @@ export const profileData = {
     {
       name: "Experience",
       url: "#experience",
+    },
+    {
+      name: "Projects",
+      url: "#projects",
     },
     {
       name: "Articles",
@@ -62,6 +67,14 @@ export const articlesData = {
   articles: [
     {
       id: 1,
+      image: mysqlInfraImg,
+      date: "Apr 20, 2026",
+      title:
+        "Building a Secure MySQL Infrastructure from Scratch: A Journey through Docker, WSL, and Git",
+      url: "https://medium.com/@kevinekene/building-a-secure-mysql-infrastructure-from-scratch-a-journey-through-docker-wsl-and-git-7a18b7a35f0c",
+    },
+    {
+      id: 2,
       image: modernTechImg,
       date: "Nov 24, 2025",
       title:
@@ -69,7 +82,7 @@ export const articlesData = {
       url: "https://medium.com/@kevinekene/the-hidden-superpower-behind-modern-engineering-how-i-learned-to-see-systems-as-stories-358053439831",
     },
     {
-      id: 2,
+      id: 3,
       image: impervaImg,
       date: "Nov 3, 2025",
       title: "Imperva Cloud WAF Integration on RHEL 8 — Key Steps & Insights",
@@ -116,5 +129,14 @@ export const socials = [
     id: 4,
     icon: FaEnvelope,
     url: "mailto:kevinekwems@gmail.com",
+  },
+];
+
+export const projects = [
+  {
+    id: 1,
+    title: "Containerized MySQL Infrastructure with Portainer",
+    link: "https://github.com/bangz-me/MySQL-Lab",
+    description: `Built a containerized MySQL environment using Docker Compose and Portainer for database deployment, monitoring, and persistent storage management.`,
   },
 ];

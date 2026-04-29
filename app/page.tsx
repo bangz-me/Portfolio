@@ -6,7 +6,9 @@ import {
   experienceData,
   profileData,
   socials,
+  projects,
 } from "./constants/home";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 export default function Home() {
   const date = new Date().getFullYear();
@@ -29,10 +31,10 @@ export default function Home() {
             <h1 className="text-3xl">{profileData.name}</h1>
             <p className="text-lg mb-1">{profileData.role}</p>
             <div>
-              <ul className="flex text-sm sm:text-base">
+              <ul className="flex-wrap sm:flex-nowrap gap-0 gap-y-2 flex text-sm sm:text-base">
                 {profileData.links.map((link, index) => {
                   return (
-                    <li key={index} className="border-r px-2 first:pl-0">
+                    <li key={index} className="border-r border-l px-2">
                       <a
                         className="text-fg-300 hover:underline"
                         href={link.url}
@@ -78,6 +80,31 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="projects">
+          <div className="wrapper space-y-6">
+            <h2 className="text-2xl mb-4">Projects</h2>
+            <div className="space-y-6">
+              {projects.map((project) => {
+                return (
+                  <div className="space-y-3" key={project.id}>
+                    <a
+                      className="hover:gap-2 transition-all ease-in flex items-center"
+                      href={project.link}
+                      target="_blank"
+                    >
+                      <h3 className="truncate max-w-[60ch] text-xl">
+                        {project.title}
+                      </h3>
+                      <FaExternalLinkAlt className="text-sm shrink-0" />
+                    </a>
+                    <p>{project.description}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
         <section id="articles">
           <div className="wrapper space-y-6">
             <h2 className="text-2xl mb-4">Articles</h2>
@@ -97,13 +124,14 @@ export default function Home() {
                     </div>
                     <div>
                       <a
-                        className=" hover:underline"
+                        className="hover:gap-2 transition-all ease-out flex items-center"
                         href={article.url}
                         target="_blank"
                       >
-                        <h3 className="truncate w-[60ch] text-xl">
+                        <h3 className="truncate max-w-[60ch] text-xl">
                           {article.title}
                         </h3>
+                        <FaExternalLinkAlt className="text-sm shrink-0" />
                       </a>
                       <p className="text-sm">{article.date}</p>
                     </div>
